@@ -13,15 +13,15 @@ class CDrawManager
 {
 public:
 	void Initialize( );
-	void DrawString( int x, int y, DWORD dwColor, const wchar_t *pszText);
-	void DrawString( int x, int y, DWORD dwColor, const char *pszText, ... );
-	byte GetESPHeight( );
+	void DrawString( int x, int y, DWORD dwColor, const wchar_t *psz_text) const;
+	void DrawString( int x, int y, DWORD dwColor, const char *pszText, ... ) const;
+	static std::byte GetESPHeight( );
 	int GetPixelTextSize ( const char *pszText );
 	int GetPixelTextSize ( wchar_t *pszText );
 	void DrawBox( Vector vOrigin, int r, int g, int b, int alpha, int box_width, int radius );
-	void DrawRect( int x, int y, int w, int h, DWORD dwColor );
-	void OutlineRect( int x, int y, int w, int h, DWORD dwColor );
-	bool WorldToScreen( Vector &vOrigin, Vector &vScreen );
+	static void DrawRect( int x, int y, int w, int h, DWORD dwColor );
+	static void OutlineRect( int x, int y, int w, int h, DWORD dwColor );
+	static bool WorldToScreen( Vector &vOrigin, Vector &vScreen );
 	DWORD dwGetTeamColor( int iIndex )
 	{
 		static DWORD dwColors[] = { 0, //Dummy
